@@ -41,11 +41,11 @@ jobs:
               url: ${{ inputs.artifact-url }}
             hostname: hackersnews-web.${{ inputs.environment }}.preview.cb-demos.io
             config:
-              fmKey: ${{ vars.FM_TOKEN }}
+              fmKey: "demo-token"
               apiUrl: https://hackersnews-api.${{ inputs.environment }}.preview.cb-demos.io/api
               authUrl: https://hackersnews-auth.${{ inputs.environment }}.preview.cb-demos.io
-              useVPC: REPLACE_ME_USE_VPC
-              fmInstance: REPLACE_ME_FM_INSTANCE
+              useVPC: "false"
+              fmInstance: "demo"
       - name: Register deployed artifact
         uses: cloudbees-io/register-deployed-artifact@v2
         with:
