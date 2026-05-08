@@ -15,7 +15,7 @@ spec:
         app: {{ .Release.Name }}
     spec:
       imagePullSecrets:
-      - name: ecr-registry
+      - name: ghcr-secret
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.url }}"
