@@ -13,6 +13,9 @@ on:
       environment:
         type: string
         required: true
+      namespace:
+        type: string
+        required: true
 
 jobs:
   deploy:
@@ -32,7 +35,7 @@ jobs:
         with:
           chart-location: ${{ cloudbees.workspace }}/chart
           release-name: hackersnews-web
-          namespace: ${{ vars.namespace }}
+          namespace: ${{ inputs.namespace }}
           values: |
             image:
               url: ${{ inputs.artifact-url }}
